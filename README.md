@@ -23,3 +23,65 @@ Arquitetura e componentes da ferramenta:
 
 Diagrama de classes da ferramenta:
 ![Alt text](https://cloud.githubusercontent.com/assets/6173960/10487631/3c588058-726b-11e5-8ca9-10afd59416a9.png?raw=true "Diagrama de classe da ferramenta")
+
+## Tutorial de extensão da API do BugInf para outro sistema de bugtracking:
+
+Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
+```JAVA
+public enum BugTrackingType {
+   BUGZILLA; // representa o sistema de bug tracking
+} 
+```
+
+```JAVA
+public class BugzillaServiceImpl implements BugTrackingService {
+
+  @Override
+	public List<Projeto> recuperarTodosProjetos() {
+	 // implementar lógica 
+	}
+  @Override
+	public List<Defeito> recuperarTodosDefeitosProjeto(final Projeto projeto) {
+	 // implementar lógica
+	}
+} 
+```
+
+```JAVA
+public class BugTrackingServiceFactory {
+
+  	public static BugTrackingService getBugTrackingService(final BugTrackingType bugTrackingType) {
+		switch (bugTrackingType) {
+		case BUGZILLA:
+			return new BugzillaServiceImpl();
+		}
+		return null;
+	}
+} 
+```
+
+```JAVA
+public class BugTrackingServiceFactory {
+
+  	public static BugTrackingService getBugTrackingService(final BugTrackingType bugTrackingType) {
+		switch (bugTrackingType) {
+		case BUGZILLA:
+			return new BugzillaServiceImpl();
+		}
+		return null;
+	}
+} 
+```
+
+Criar uma enum onde ira conter informações da api do Bugzilla, como podemos ver no exemplo abaixo:
+```JAVA
+public class BugzillaConfig {
+
+  URL("http://url.repositorio.com"); // URL do repositório que irá utilizar.
+  
+} 
+```
+
+
+
+
