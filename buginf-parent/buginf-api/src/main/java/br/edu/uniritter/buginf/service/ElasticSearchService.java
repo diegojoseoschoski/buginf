@@ -12,11 +12,6 @@ public interface ElasticSearchService {
 	 */
 	<T> void addIndiceRequisicao(final String indice, final String tipo, T pojo);
 	
-	/**
-	 * Executa a execução do bulk request
-	 * para inserir os indices
-	 */
-	void executarRequisicao();
 	
 	/**
 	 * Cria o mapeamento do defeito

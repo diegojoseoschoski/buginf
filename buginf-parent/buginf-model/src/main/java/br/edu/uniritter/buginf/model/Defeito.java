@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 
 import br.edu.uniritter.buginf.type.BugTrackingType;
+import br.edu.uniritter.buginf.type.CategoriaType;
+import br.edu.uniritter.buginf.type.PrioridadeType;
+import br.edu.uniritter.buginf.type.SituacaoType;
+import br.edu.uniritter.buginf.type.StatusType;
 
 
 public class Defeito extends BugTrackingModel implements Serializable{
@@ -13,15 +17,17 @@ public class Defeito extends BugTrackingModel implements Serializable{
 
 	private Integer id;
 	
-	private String titulo;
+	private String descricao;
 	
-	private String status;
+	private String versao;
 	
-	private String categoria;
+	private StatusType status;
 	
-	private String tipo;
+	private SituacaoType situacao;
 	
-	private String priodade;
+	private CategoriaType categoria;
+	
+	private PrioridadeType priodade;
 	
 	private String atribuidoPara;
 	
@@ -37,23 +43,26 @@ public class Defeito extends BugTrackingModel implements Serializable{
 
 	private Defeito(final DefeitoBuilder builder) {
 		this.id = builder.id;
-		this.titulo = builder.titulo;
+		this.descricao = builder.descricao;
+		this.versao = builder.versao;
 		this.status = builder.status;
 		this.categoria = builder.categoria;
-		this.tipo = builder.tipo;
-		this.priodade = builder.severidade;
+		this.priodade = builder.prioridade;
 		this.atribuidoPara = builder.atribuidoPara;
 		this.projeto = builder.projeto;
 		this.dataCriacao = builder.dataCriacao;
 		this.dataEncerramento = builder.dataEncerramento;
+		this.situacao = builder.situacao;
 		setBugtracking(builder.bugtrackingType);
 	}
 	
-	public String getTitulo() {
-		return titulo;
+	public String getDescricao() {
+		return descricao;
 	}
-
-	public String getSeveridade() {
+	public String getVersao() {
+		return versao;
+	}
+	public PrioridadeType getSeveridade() {
 		return priodade;
 	}
 
@@ -90,33 +99,37 @@ public class Defeito extends BugTrackingModel implements Serializable{
 		return "#"+id;
 	}
 
-	public String getStatus() {
+	public StatusType getStatus() {
 		return status;
 	}
 
-	public String getCategoria() {
+	public CategoriaType getCategoria() {
 		return categoria;
 	}
-
-	public String getTipo() {
-		return tipo;
+	
+	public SituacaoType getSituacao() {
+		return situacao;
 	}
+
 
 	public static class DefeitoBuilder {
 		
+
 		private BugTrackingType bugtrackingType;
 		
 		private Integer id;
 		
-		private final String titulo;
+		private final String descricao;
 		
-		private String status;
+		private String versao;
 		
-		private String categoria;
+		private SituacaoType situacao;
 		
-		private String tipo;
-
-		private String severidade;
+		private StatusType status;
+		
+		private CategoriaType categoria;
+		
+		private PrioridadeType prioridade;
 
 		private String atribuidoPara;
 
@@ -126,29 +139,34 @@ public class Defeito extends BugTrackingModel implements Serializable{
 
 		private String dataEncerramento;
 
-		public DefeitoBuilder(final BugTrackingType bugtrackingType, final Integer id, final String titulo) {
+		public DefeitoBuilder(final BugTrackingType bugtrackingType, final Integer id, final String descricao) {
 			this.bugtrackingType = bugtrackingType;
 			this.id = id;
-			this.titulo = titulo;
+			this.descricao = descricao;
 		}
 		
-		public DefeitoBuilder status(final String status) {
+		public DefeitoBuilder versao(final String versao) {
+			this.versao = versao;
+			return this;
+		}
+
+		public DefeitoBuilder situacao(final SituacaoType situacao) {
+			this.situacao = situacao;
+			return this;
+		}
+		
+		public DefeitoBuilder status(final StatusType status) {
 			this.status = status;
 			return this;
 		}
 		
-		public DefeitoBuilder categoria(final String categoria) {
+		public DefeitoBuilder categoria(final CategoriaType categoria) {
 			this.categoria = categoria;
 			return this;
 		}
 		
-		public DefeitoBuilder tipo(final String tipo) {
-			this.tipo = tipo;
-			return this;
-		}
-		
-		public DefeitoBuilder prioridade(final String prioridade) {
-			this.severidade = prioridade;
+		public DefeitoBuilder prioridade(final PrioridadeType prioridade) {
+			this.prioridade = prioridade;
 			return this;
 		}
 		
@@ -178,5 +196,5 @@ public class Defeito extends BugTrackingModel implements Serializable{
 			return defeito;
 		}
 	}	
-
+	
 }

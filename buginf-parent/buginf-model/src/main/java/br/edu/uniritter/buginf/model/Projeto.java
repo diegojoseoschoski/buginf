@@ -29,7 +29,7 @@ public class Projeto extends BugTrackingModel implements Serializable{
 	public static class ProjetoBuilder {
 		
 		private final String nome;
-		private int id;
+		private final int id;
 		private final BugTrackingType bugtrackingType;
 		
 		public ProjetoBuilder(final BugTrackingType bugtrackingType, final String nome, final int id) {

@@ -36,6 +36,7 @@ public class BugInfServiceImpl implements BugInfService {
 		final List<Projeto> projetos = bugTrackingServiceImpl.recuperarTodosProjetos();
 		
 		for (Projeto projeto : projetos) {
+				
 			final List<Defeito> defeitos = bugTrackingServiceImpl.recuperarTodosDefeitosProjeto(projeto);	
 			if (!defeitos.isEmpty()) {
 				executarInsercaoDefeitos(defeitos);	
@@ -49,14 +50,16 @@ public class BugInfServiceImpl implements BugInfService {
 		long startTime = System.currentTimeMillis();
 		
 		try {
+			
+			elasticSearchServiceImpl.criarIndiceMapeamentoDefeito();
+			
 			for (Defeito defeito : defeitos) {
 				elasticSearchServiceImpl.addIndiceRequisicao(ElasticSearchConfig.INDICE.getValor(), ElasticSearchConfig.TIPO_DEFEITO.getValor(), defeito);
 			}
+			
 		} catch (Exception e) {
 			LOGGER.log(Level.SEVERE, "Erro insercao defeitos", e);
 		} finally {
-			elasticSearchServiceImpl.criarIndiceMapeamentoDefeito();
-			elasticSearchServiceImpl.executarRequisicao();
 			elasticSearchServiceImpl.closeConnection();
 		}
 		

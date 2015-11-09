@@ -18,6 +18,5 @@ public class BugInfFacadeImpl implements BugInfFacade {
 		bugInfServiceImpl.executarIntegracaoDefeitos();
 	}
 	
-	
 
 }

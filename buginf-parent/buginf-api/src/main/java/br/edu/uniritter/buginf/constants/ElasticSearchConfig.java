@@ -1,18 +1,17 @@
 package br.edu.uniritter.buginf.constants;
 /**
- * Verificar refatorar para uma única INTERFACE COM AS CONSTANTES
  * @author Diego
  *
  */
 public enum ElasticSearchConfig {
 	
-	INDICE("bug_inf_dashboard"),//bug_inf_integracao
+	INDICE("bug_inf_dashboard"),
 	TIPO_DEFEITO("defeito"),
 	TIPO_PROJETO("projeto"),
-	DEFEITO_MAPPING(
-			"{\"defeito\":{\"properties\":{\"atribuidoPara\":{\"type\":\"string\",\"index\":\"not_analyzed\"},\"categoria\":{\"type\":\"string\"},\"dataCriacao\":{\"type\":\"string\"},\"dataEncerramento\":{\"type\":\"string\"},\"id\":{\"type\":\"long\"},\"prioridade\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"tipo\":{\"type\":\"string\"},\"titulo\":{\"type\":\"string\"}}}}");
+	DEFEITO_MAPPING(																															
+			"{\"defeito\":{\"properties\":{\"atribuidoPara\":{\"type\":\"string\",\"index\":\"not_analyzed\"},\"categoria\":{\"type\":\"string\"},\"dataCriacao\":{\"type\":\"date\",\"format\": \"dateOptionalTime\"},\"dataEncerramento\":{\"type\":\"date\",\"format\": \"dateOptionalTime\"},\"id\":{\"type\":\"long\"},\"prioridade\":{\"type\":\"string\"},\"status\":{\"type\":\"string\"},\"situacao\":{\"type\":\"string\"},\"descricao\":{\"type\":\"string\"},\"versao\":{\"type\":\"string\"}}}}");
 	
-
+	 
 	
 	private String valor;
 	

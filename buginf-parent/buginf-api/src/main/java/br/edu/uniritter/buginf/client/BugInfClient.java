@@ -3,7 +3,7 @@ import br.edu.uniritter.buginf.facade.BugInfFacade;
 import br.edu.uniritter.buginf.facade.impl.BugInfFacadeImpl;
 import br.edu.uniritter.buginf.type.BugTrackingType;
 
-/** Estou utilizando varios padrões de projeto
+/**
  * @author Diego
  *
  */
