@@ -6,6 +6,9 @@ import br.edu.uniritter.buginf.type.PrioridadeType;
 
 public class RedminePrioridadeDefeitoMapper implements BugTrackingMapper<String, PrioridadeType> {
 
+	private static final String URGENT = "URGENT";
+	private static final String HIGH = "HIGH";
+	private static final String NORMAL = "NORMAL";
 	private static final String LOW = "LOW";
 
 	@Override
@@ -19,11 +22,11 @@ public class RedminePrioridadeDefeitoMapper implements BugTrackingMapper<String,
 		switch (prioridade) {
 		case LOW:
 			return PrioridadeType.BAIXA;
-		case "NORMAL":
+		case NORMAL:
 			return PrioridadeType.NORMAL;
-		case "HIGH":
+		case HIGH:
 			return PrioridadeType.ALTA;
-		case "URGENT":
+		case URGENT:
 			return PrioridadeType.URGENTE;
 		default:
 			return PrioridadeType.NAO_DEFINIDA;
