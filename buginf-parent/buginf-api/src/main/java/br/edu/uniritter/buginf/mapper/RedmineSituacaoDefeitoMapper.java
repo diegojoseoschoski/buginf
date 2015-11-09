@@ -5,6 +5,7 @@ import br.edu.uniritter.buginf.type.SituacaoType;
 public class RedmineSituacaoDefeitoMapper implements BugTrackingMapper<Integer, SituacaoType> {
 
 	private static final int ID_FECHADO = 5;
+	
 
 	@Override
 	public SituacaoType map(Integer situacaoId) {

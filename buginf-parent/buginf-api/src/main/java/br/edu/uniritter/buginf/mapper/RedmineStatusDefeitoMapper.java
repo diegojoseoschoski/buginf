@@ -1,5 +1,8 @@
 package br.edu.uniritter.buginf.mapper;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.StringUtils;
 
 import br.edu.uniritter.buginf.type.StatusType;
@@ -11,6 +14,16 @@ public class RedmineStatusDefeitoMapper implements BugTrackingMapper<String, Sta
 	private static final String RESOLVED = "RESOLVED";
 	private static final String NEEDS_FEEDBACK = "NEEDS FEEDBACK";
 	private static final String NEW = "NEW";
+	
+	private static final Map<String, StatusType> STATUS_MAP = new HashMap<String, StatusType>();
+	
+	static {
+		STATUS_MAP.put(NEW, StatusType.NOVO);
+		STATUS_MAP.put(NEEDS_FEEDBACK, StatusType.PENDENTE_FEEDBACK);
+		STATUS_MAP.put(CLOSED, StatusType.FECHADO);
+		STATUS_MAP.put(REOPENED, StatusType.REABERTO);
+		STATUS_MAP.put(RESOLVED, StatusType.RESOLVIDO);
+	}
 
 	@Override
 	public StatusType map(String status) {
@@ -20,21 +33,7 @@ public class RedmineStatusDefeitoMapper implements BugTrackingMapper<String, Sta
 		} else {
 			status  = StringUtils.upperCase(status);
 		}
-		
-		switch (status) {
-		case NEW:
-			return StatusType.NOVO;
-		case NEEDS_FEEDBACK:
-			return StatusType.PENDENTE_FEEDBACK;
-		case RESOLVED:
-			return StatusType.RESOLVIDO;
-		case CLOSED:
-			return StatusType.FECHADO;	
-		case REOPENED:
-			return StatusType.REABERTO;		
-		default:
-			return StatusType.NAO_DEFINIDO;		
-		}
+		return STATUS_MAP.get(status);
 	}
 
 }
