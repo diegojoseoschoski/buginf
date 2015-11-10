@@ -51,11 +51,9 @@ public class RedmineCategoriaDefeitoMapper implements BugTrackingMapper<String, 
 		
 		if (StringUtils.isBlank(categoria)) {
 			return null;
-		} else {
-			categoria = StringUtils.upperCase(categoria);
-		}
-		
-		return CATEGORIA_MAP.get(categoria);
+		} 
+
+		return CATEGORIA_MAP.get(StringUtils.upperCase(categoria));
 	}
 
 }

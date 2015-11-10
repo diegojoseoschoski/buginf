@@ -27,11 +27,9 @@ public class RedminePrioridadeDefeitoMapper implements BugTrackingMapper<String,
 	public PrioridadeType map(String prioridade) {
 		if (StringUtils.isBlank(prioridade)) {
 			return null;
-		} else {
-			prioridade = StringUtils.upperCase(prioridade);
-		}
+		} 
 		
-		return PRIORIDADE_MAP.get(prioridade);
+		return PRIORIDADE_MAP.get(StringUtils.upperCase(prioridade));
 	}
 
 }
