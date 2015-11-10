@@ -31,7 +31,9 @@ public class RedmineStatusDefeitoMapper implements BugTrackingMapper<String, Sta
 		if (StringUtils.isBlank(status)) {
 			return null;	
 		} 
-		return STATUS_MAP.get(StringUtils.upperCase(status));
+
+		return STATUS_MAP.containsKey(status) ? STATUS_MAP.get(StringUtils
+				.upperCase(status)) : StatusType.NAO_DEFINIDO;
 	}
 
 }
