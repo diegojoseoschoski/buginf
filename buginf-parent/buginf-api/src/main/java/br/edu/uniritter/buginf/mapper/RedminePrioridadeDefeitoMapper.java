@@ -29,7 +29,7 @@ public class RedminePrioridadeDefeitoMapper implements BugTrackingMapper<String,
 			return null;
 		} 
 		
-		return PRIORIDADE_MAP.containsKey(prioridade) ? PRIORIDADE_MAP
+		return PRIORIDADE_MAP.containsKey(StringUtils.upperCase(prioridade)) ? PRIORIDADE_MAP
 				.get(StringUtils.upperCase(prioridade))
 				: PrioridadeType.NAO_DEFINIDA;
 	}

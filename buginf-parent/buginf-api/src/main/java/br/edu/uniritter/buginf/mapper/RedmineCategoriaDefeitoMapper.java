@@ -53,7 +53,7 @@ public class RedmineCategoriaDefeitoMapper implements BugTrackingMapper<String, 
 			return null;
 		} 
 
-		return CATEGORIA_MAP.containsKey(categoria) ? CATEGORIA_MAP
+		return CATEGORIA_MAP.containsKey(StringUtils.upperCase(categoria)) ? CATEGORIA_MAP
 				.get(StringUtils.upperCase(categoria))
 				: CategoriaType.NAO_DEFINIDA;
 	}
