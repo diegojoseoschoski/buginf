@@ -42,7 +42,7 @@ public class RedmineCategoriaDefeitoMapper implements BugTrackingMapper<String, 
 		CATEGORIA_MAP.put(SCM_EXTRA, CategoriaType.CONTROLE_VERSAO);
 		CATEGORIA_MAP.put(TEXT_FORMATTING, CategoriaType.TEXTO);
 		CATEGORIA_MAP.put(ACCOUNTS_AUTHENTICATION, CategoriaType.AUTENTICACAO);
-		CATEGORIA_MAP.put(PERFORMANCE, CategoriaType.PERFORMACE);
+		CATEGORIA_MAP.put(PERFORMANCE, CategoriaType.PERFORMANCE);
 		CATEGORIA_MAP.put(DATABASE, CategoriaType.BANCO_DADOS);
 	}
 
