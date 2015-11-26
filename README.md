@@ -24,12 +24,14 @@ Arquitetura e componentes da ferramenta:
 
 Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
 #### Passo 1º
+Criar uma constante na Enum BugTrackingType que represente o sistema de bug tracking.
 ```JAVA
 public enum BugTrackingType {
    BUGZILLA; // representa o sistema de bug tracking
 } 
 ```
 #### Passo 2º
+Criar uma classe que implemente a interface BugTrackingService e implementar a lógica para recuperar as informações do bug tracking.
 ```JAVA
 public class BugzillaServiceImpl implements BugTrackingService {
  // O - tipo generico que deve ser conforme foi implementado 
@@ -51,19 +53,7 @@ public class BugzillaServiceImpl implements BugTrackingService {
 } 
 ```
 #### Passo 3º
-```JAVA
-public class BugTrackingServiceFactory {
-
-  	public static BugTrackingService getBugTrackingService(final BugTrackingType bugTrackingType) {
-		switch (bugTrackingType) {
-		case BUGZILLA:
-			return new BugzillaServiceImpl();
-		}
-		return null;
-	}
-} 
-```
-#### Passo 4º
+Adicionar na classe BugTrackingServiceFactory uma condicional que verifique qual o sistema de bug tracking e instancie o service do mesmo.
 ```JAVA
 public class BugTrackingServiceFactory {
 
@@ -76,7 +66,7 @@ public class BugTrackingServiceFactory {
 	}
 } 
 ```
-#### Passo 5º
+#### Passo 4º
 Criar uma enum onde ira conter informações da api do Bugzilla, como podemos ver no exemplo abaixo:
 ```JAVA
 public enum BugzillaConfig {
@@ -86,8 +76,7 @@ public enum BugzillaConfig {
   
 } 
 ```
-
-VER ORDEM CERTA
+#### Passo 5º
 Classe utilizada para converter o Objeto da API do bugzilla para o POJO da aplicação
 O - deve se utilizar o tipo de objeto utilizado para representar o modelo de defeito na API do bugzilla
 Defeito - POJO utilizado pela API para representar o defeito
@@ -107,7 +96,7 @@ public class BugzillaDefeitoMapper implements BugTrackingMapper<O, Defeito> {
 } 
 ```
 
-
+#### Passo 6º
 E por último adicionar na classe BugInfClient o tipo do sistema de bug tracking que se quer integrar. Como pode ser visto no exemplo abaixo:
 ```JAVA
 public class BugInfClient {
