@@ -20,10 +20,6 @@ Arquitetura e componentes da ferramenta:
 
 
 
-
-Diagrama de classes da ferramenta:
-![Alt text](https://cloud.githubusercontent.com/assets/6173960/10487631/3c588058-726b-11e5-8ca9-10afd59416a9.png?raw=true "Diagrama de classe da ferramenta")
-
 ## Tutorial de extensão da API do BugInf para outro sistema de bugtracking:
 
 Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
