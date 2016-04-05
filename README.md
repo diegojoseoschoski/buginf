@@ -21,7 +21,7 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 * Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo <b>buginf-api.properties</b>.
 * Altere o arquivo <b>buginf-api.properties</b> para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
 * Digitar o comando <b>java -jar buginf-api-1.0-SNAPSHOT-jar-with-dependencies.jar buginf-api.properties</b>, este comando irá executar a integração das informações do repositório informado.
-* Verificar ordem e falar Kibana e ElasticSearch (Parei aqui)
+* falar criação dashboard
 
 ## Quick Start
 Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
