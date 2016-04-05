@@ -3,11 +3,10 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 
 
 ## Requisitos
-- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) ou superior
+- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)ou superior
 - [Apache Maven 3.0.5](https://maven.apache.org/download.cgi) ou superior
 - [Elasticsearch 1.5.2](https://github.com/elastic/elasticsearch) ou superior
 - [Kibana 4.0.2](https://github.com/elastic/kibana) ou superior
-
 
 ## Instalação
 * Executar o Elasticsearch e depois o Kibana .
