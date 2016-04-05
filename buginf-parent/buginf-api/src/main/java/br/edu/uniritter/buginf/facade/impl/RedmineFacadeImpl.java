@@ -8,21 +8,20 @@ import br.edu.uniritter.buginf.model.Projeto;
 import br.edu.uniritter.buginf.service.BugTrackingService;
 import br.edu.uniritter.buginf.service.impl.BugTrackingServiceFactory;
 import br.edu.uniritter.buginf.type.BugTrackingType;
+import br.edu.uniritter.buginf.util.PropertyLoaderUtil;
 
 public class RedmineFacadeImpl implements BugTrackingFacade {
 	
 	private BugTrackingService redmineServiceImpl;
 	
-	RedmineFacadeImpl(final BugTrackingType bugTrackingType) {
-		redmineServiceImpl = BugTrackingServiceFactory.getBugTrackingService(bugTrackingType);
+	RedmineFacadeImpl(final BugTrackingType bugTrackingType, final PropertyLoaderUtil propertyLoaderUtil) {
+		redmineServiceImpl = BugTrackingServiceFactory.getBugTrackingService(bugTrackingType, propertyLoaderUtil);
 	}
 
-	@Override
 	public List<Projeto> recuperarTodosProjetos() {
 		return redmineServiceImpl.recuperarTodosProjetos();
 	}
 
-	@Override
 	public List<Defeito> recuperarTodosDefeitosProjeto(final Projeto projeto) {
 		return redmineServiceImpl.recuperarTodosDefeitosProjeto(projeto);
 	}

@@ -11,6 +11,7 @@ import br.edu.uniritter.buginf.service.BugInfService;
 import br.edu.uniritter.buginf.service.BugTrackingService;
 import br.edu.uniritter.buginf.service.ElasticSearchService;
 import br.edu.uniritter.buginf.type.BugTrackingType;
+import br.edu.uniritter.buginf.util.PropertyLoaderUtil;
 
 public class BugInfServiceImpl implements BugInfService {
 	
@@ -24,13 +25,12 @@ public class BugInfServiceImpl implements BugInfService {
 
 	private final BugTrackingService bugTrackingServiceImpl;
 	
-	public BugInfServiceImpl(final BugTrackingType bugTrackingType) {
+	public BugInfServiceImpl(final BugTrackingType bugTrackingType, PropertyLoaderUtil propertyLoaderUtil) {
 		this.elasticSearchServiceImpl =  new ElasticSearchServiceImpl();
-		this.bugTrackingServiceImpl = BugTrackingServiceFactory.getBugTrackingService(bugTrackingType);
+		this.bugTrackingServiceImpl = BugTrackingServiceFactory.getBugTrackingService(bugTrackingType, propertyLoaderUtil);
 		
 	}
 
-	@Override
 	public void executarIntegracaoDefeitos() {
 		LOGGER.info("Integração dos defeitos Iniciada...");
 		final List<Projeto> projetos = bugTrackingServiceImpl.recuperarTodosProjetos();

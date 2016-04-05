@@ -14,7 +14,6 @@ public class ElasticSearchFacadeImpl implements ElasticSearchFacade {
 		}
 	}
 	
-	@Override
 	public <T> void inserirIndice(final String indice, final String tipo, final  T pojo) {
 		elasticSearchServiceImpl.addIndiceRequisicao(indice, tipo, pojo);
 	}

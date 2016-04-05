@@ -25,7 +25,6 @@ public class RedmineStatusDefeitoMapper implements BugTrackingMapper<String, Sta
 		STATUS_MAP.put(RESOLVED, StatusType.RESOLVIDO);
 	}
 
-	@Override
 	public StatusType map(String status) {
 		
 		if (StringUtils.isBlank(status)) {

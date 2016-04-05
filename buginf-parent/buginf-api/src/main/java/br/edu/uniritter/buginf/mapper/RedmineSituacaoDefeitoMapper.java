@@ -7,7 +7,6 @@ public class RedmineSituacaoDefeitoMapper implements BugTrackingMapper<Integer, 
 	private static final int ID_FECHADO = 5;
 	
 
-	@Override
 	public SituacaoType map(Integer situacaoId) {
 		
 		if (situacaoId == null) {

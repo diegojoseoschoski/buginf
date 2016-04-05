@@ -39,7 +39,6 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
 		return node.client();
 	}
 
-	@Override
 	public <T> void addIndiceRequisicao(final String indice, final String tipo, final T pojo) {
 		IndexRequest indexRequest = new IndexRequest(indice, tipo).source(paserObjectToJson(pojo));
 		bulkProcessor.add(indexRequest);
@@ -70,7 +69,6 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
 		return BugInfJSONUtil.paserObjectToJson(pojo);
 	}
 
-	@Override
 	public void closeConnection() {
 		
 		if (!NodeBuilder.nodeBuilder().node().isClosed()) {
@@ -83,18 +81,15 @@ public class ElasticSearchServiceImpl implements ElasticSearchService {
 	private BulkProcessor inicializarBulkProcessor() {
 		BulkProcessor bulkProcessor = BulkProcessor
 				.builder(clientElasticSearch, new BulkProcessor.Listener() {
-					@Override
 					public void beforeBulk(long executionId, BulkRequest request) {
 						LOGGER.info(String.format("Going to execute new bulk composed of %s actions", request.numberOfActions()));
 					}
 
-					@Override
 					public void afterBulk(long executionId,
 							BulkRequest request, BulkResponse response) {
 						LOGGER.info(String.format("Executed bulk composed of %s actions", request.numberOfActions()));
 					}
 
-					@Override
 					public void afterBulk(long executionId,
 							BulkRequest request, Throwable failure) {
 						LOGGER.warning("Falha na execução: "+ failure);

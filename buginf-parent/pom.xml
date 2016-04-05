@@ -12,26 +12,34 @@
 		<java.version>1.7</java.version>
 		<buginf.version>1.0-SNAPSHOT</buginf.version>
 	</properties>
-	
+
 	<modules>
 		<module>buginf-model</module>
 		<module>buginf-api</module>
 	</modules>
 
 
+
+	<!--usar comando maven:
+	    clean compile assembly:single -->
 	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<version>${maven.compiler.version}</version>
-					<configuration>
-						<source>${java.version}</source>
-						<target>${java.version}</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
+		<plugins>
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
+						<manifest>
+							<mainClass>br.edu.uniritter.buginf.client.BugInfClient</mainClass>
+						</manifest>
+					</archive>
+					<descriptorRefs>
+						<descriptorRef>jar-with-dependencies</descriptorRef>
+					</descriptorRefs>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
+
+
+
 </project>

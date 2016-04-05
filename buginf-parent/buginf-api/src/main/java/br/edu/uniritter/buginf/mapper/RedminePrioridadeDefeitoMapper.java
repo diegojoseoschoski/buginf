@@ -23,7 +23,6 @@ public class RedminePrioridadeDefeitoMapper implements BugTrackingMapper<String,
 		PRIORIDADE_MAP.put(URGENT, PrioridadeType.URGENTE);
 	}
  
-	@Override
 	public PrioridadeType map(String prioridade) {
 		if (StringUtils.isBlank(prioridade)) {
 			return null;

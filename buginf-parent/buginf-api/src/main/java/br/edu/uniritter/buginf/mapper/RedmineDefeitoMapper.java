@@ -20,7 +20,6 @@ public class RedmineDefeitoMapper implements BugTrackingMapper<Issue, Defeito> {
 	private final static RedminePrioridadeDefeitoMapper PRIORIDADE_MAPPER = new RedminePrioridadeDefeitoMapper();
 	
 	
-	@Override
 	public Defeito map(Issue issue) {
 		return new Defeito.DefeitoBuilder(BugTrackingType.REDMINE,
 				issue.getId(),

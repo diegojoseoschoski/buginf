@@ -46,7 +46,6 @@ public class RedmineCategoriaDefeitoMapper implements BugTrackingMapper<String, 
 		CATEGORIA_MAP.put(DATABASE, CategoriaType.BANCO_DADOS);
 	}
 
-	@Override
 	public CategoriaType map(String categoria) {
 		
 		if (StringUtils.isBlank(categoria)) {
