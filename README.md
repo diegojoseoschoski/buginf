@@ -16,9 +16,9 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 * Navegar até o módulo bug-inf-parent.
 * Digitar o comando <b>mvn clean compile assembly:single</b>, este comando irá gerar o empacotamento dos módulos projeto no formato JAR, onde irá ser gerado um JAR para cada módulo do projeto.
 * Copie o JAR <b>"buginf-api-1.0-SNAPSHOT-jar-with-dependencies" </b> que foi gerado no diretório buginf-parent\buginf-api\target para uma nova pasta.
-* Para a mesma pasta que você copiou o JAR copie o arquivo buginf-api.properties, este arquivo contem parâmetros de configuração da API que podem ser alterados.
-* Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo buginf-api.properties.
-* Altere o arquivo buginf-api.properties para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
+* Para a mesma pasta que você copiou o JAR copie o arquivo <b>buginf-api.properties </b>, este arquivo contem parâmetros de configuração da API que podem ser alterados.
+* Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo <b>buginf-api.properties</b>.
+* Altere o arquivo <b>buginf-api.properties</b> para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
 * Digitar o comando <b>java -jar buginf-api-1.0-SNAPSHOT-jar-with-dependencies.jar buginf-api.properties</b>, este comando irá executar a integração das informações do repositório informado.
 * Verificar ordem e falar Kibana e ElasticSearch (Parei aqui)
 
