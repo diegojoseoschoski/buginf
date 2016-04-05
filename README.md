@@ -10,6 +10,7 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 
 
 ## Instalação
+* Executar o Elasticsearch e depois o Kibana .
 * Baixar os modúlos do buginf para o diretório de sua preferência.
 * Abrir o console de comandos do windows/linux.
 * Navegar até o diretório onde foi baixado o projeto.
