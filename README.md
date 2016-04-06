@@ -3,25 +3,25 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 
 
 ## Requisitos
-- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) ou superior
-- [Apache Maven 3.0.5](https://maven.apache.org/download.cgi) ou superior
+- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)
+- [Apache Maven 3.0.5](https://maven.apache.org/download.cgi) 
 - [Elasticsearch 1.5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-1-5-2) 
 - [Kibana 4.0.2](https://www.elastic.co/downloads/past-releases/kibana-4-0-2) 
 
 ## Instalação
 * Executar o Elasticsearch e depois o Kibana .
-* Baixar os modúlos do buginf para o diretório de sua preferência.
+* Baixar os módulos do buginf para o diretório de sua preferência.
 * Abrir o console de comandos do windows/linux.
 * Navegar até o diretório onde foi baixado o projeto.
 * Navegar até o módulo bug-inf-parent.
 * Digitar o comando <b>mvn clean compile assembly:single</b>, este comando irá gerar o empacotamento dos módulos projeto no formato JAR, onde irá ser gerado um JAR para cada módulo do projeto.
 * Copie o JAR <b>"buginf-api-1.0-SNAPSHOT-jar-with-dependencies" </b> que foi gerado no diretório buginf-parent\buginf-api\target para uma nova pasta.
-* Para a mesma pasta que você copiou o JAR copie o arquivo <b>buginf-api.properties </b>, este arquivo contem parâmetros de configuração da API que podem ser alterados.
+* Para a mesma pasta que você copiou o JAR, copie o arquivo <b>buginf-api.properties </b>, este arquivo contem parâmetros de configuração da API que podem ser alterados.
 * Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo <b>buginf-api.properties</b>.
 * Altere o arquivo <b>buginf-api.properties</b> para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
 * Digitar o comando <b>java -jar buginf-api-1.0-SNAPSHOT-jar-with-dependencies.jar buginf-api.properties</b>, este comando irá executar a integração das informações do repositório informado.
 * Após a execução da API ele irá criar um índice no elasticsearch chamado bug_inf_dashboard onde estão armazenadas as informações dos defeitos do repositório que foi escolhido.
-* A criação do dashboard no kibana pode ser criada a partir da [documentação](https://www.elastic.co/guide/en/kibana/4.0/index.html) seguindo as métricas que constam na seção 4 figura 4.
+* A criação do dashboard no kibana pode ser criada a partir da [documentação](https://www.elastic.co/guide/en/kibana/4.0/index.html) seguindo as métricas que constam na figura 4.
 
 ## Quick Start
 Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
