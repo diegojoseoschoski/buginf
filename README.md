@@ -20,7 +20,7 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 * Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo <b>buginf-api.properties</b>.
 * Altere o arquivo <b>buginf-api.properties</b> para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
 * Digitar o comando <b>java -jar buginf-api-1.0-SNAPSHOT-jar-with-dependencies.jar buginf-api.properties</b>, este comando irá executar a integração das informações do repositório informado.
-* Após a execução da API ele irá criar um índice no elasticsearch chamado bug_inf_dashboard onde estam armazenadas as informações dos defeitos do repositório que foi escolhido.
+* Após a execução da API ele irá criar um índice no elasticsearch chamado bug_inf_dashboard onde estão armazenadas as informações dos defeitos do repositório que foi escolhido.
 * A criação do dashboard no kibana pode ser criada a partir da [documentação](https://www.elastic.co/guide/en/kibana/4.0/index.html) seguindo as métricas que constam na seção 4 figura 4.
 
 ## Quick Start
