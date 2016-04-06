@@ -3,10 +3,10 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 
 
 ## Requisitos
-- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html)ou superior
+- [Java 1.7](http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html) ou superior
 - [Apache Maven 3.0.5](https://maven.apache.org/download.cgi) ou superior
-- [Elasticsearch 1.5.2](https://github.com/elastic/elasticsearch) ou superior
-- [Kibana 4.0.2](https://github.com/elastic/kibana) ou superior
+- [Elasticsearch 1.5.2](https://www.elastic.co/downloads/past-releases/elasticsearch-1-5-2) 
+- [Kibana 4.0.2](https://www.elastic.co/downloads/past-releases/kibana-4-0-2) 
 
 ## Instalação
 * Executar o Elasticsearch e depois o Kibana .
@@ -20,7 +20,8 @@ BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseosch
 * Navegue para essa nova pasta onde estão o arquivo .JAR e o arquivo <b>buginf-api.properties</b>.
 * Altere o arquivo <b>buginf-api.properties</b> para mudar o repositório onde será feito a integração. Ex: <b>bugtracking.name=REDMINE</b> no momento só está implementado para repositórios do REDMINE(não alterar), <b>bugtracking.url = http://www.redmine.org </b> (Pode ser módificado para outro repositório redmine, porém alguns repositórios precisam da chave de acesso da API do repositório para retornar os dados, mas no momento o BugInf não contempla este cenário).
 * Digitar o comando <b>java -jar buginf-api-1.0-SNAPSHOT-jar-with-dependencies.jar buginf-api.properties</b>, este comando irá executar a integração das informações do repositório informado.
-* falar criação dashboard
+* Após a execução da API ele irá criar um índice no elasticsearch chamado bug_inf_dashboard onde estam armazenadas as informações dos defeitos do repositório que foi escolhido.
+* A criação do dashboard no kibana pode ser criada a partir da [documentação](https://www.elastic.co/guide/en/kibana/4.0/index.html) seguindo as métricas que constam na seção 4 figura 4.
 
 ## Quick Start
 Neste tutorial será demonstrado como seria a extensão utilizando o sistema de bug tracking Bugzilla.
