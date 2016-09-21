@@ -1,3 +1,5 @@
+[Projeto apresentado no FISL 17 no Workshop de Software Livre 2016](http://softwarelivre.org/wsl/2016/accepted-papers)
+
 # BugInf 1.0.0-snapshot
 BugInf é uma API de código aberto ([GNU LGPL](https://github.com/diegojoseoschoski/buginf/blob/master/LICENSE)) que auxilia na integração das informações de repositórios de sistemas de bugtracking.
 
